@@ -11,7 +11,7 @@ jQuery Tokeninput: A Tokenizing Autocomplete Text Entry <https://github.com/loop
 Additional features
 -------------------
 
- * appendTo setting: more contexts, using jQuery UI Position plugin to find correction dropdown's position.
+ * appendTo setting: more contexts, using jQuery UI Position plugin to find correct dropdown's position.
 
 Document & Demo
 ---------------
