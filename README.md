@@ -3,8 +3,8 @@ Tokeninput
 
 Tokeninput is a jQuery plugin which allows your users to select multiple items from a predefined list, using autocompletion as they type to find each item.
 
-Based on
---------
+Original plugin
+---------------
 
 jQuery Tokeninput: A Tokenizing Autocomplete Text Entry <https://github.com/loopj/jquery-tokeninput>
 
