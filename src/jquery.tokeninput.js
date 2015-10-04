@@ -29,9 +29,9 @@
         processPrePopulate: false,
 
         // Display settings
-        hintText: "Type in a search term",
-        noResultsText: "No results",
-        searchingText: "Searching...",
+        hintText: true,
+        noResultsText: true,
+        searchingText: true,
         deleteText: "&#215;",
         animateDropdown: true,
         placeholder: null,
@@ -40,6 +40,11 @@
         resultsLimit: null,
         appendTo: 'body',
         enableHTML: false,
+
+        // I18n
+        enableI18n: false,
+        locale: 'vi',
+        textdomain: 'tokeninput',
 
         resultsFormatter: function(item) {
             var string = item[this.propertyToSearch];
@@ -236,6 +241,12 @@
             });
         } else {
             $(input).data("settings").classes = DEFAULT_CLASSES;
+        }
+
+        // I18n, use jQuery Globalize library
+        var translate = null
+        if ($(input).data("settings").enableI18n) {
+            translate = Globalize($(input).data("settings").locale);
         }
 
         // Save the tokens
@@ -824,14 +835,14 @@
 
         function show_dropdown_searching() {
             if ($(input).data("settings").searchingText) {
-                dropdown.html("<p>" + escapeHTML($(input).data("settings").searchingText) + "</p>");
+                dropdown.html("<p>" + escapeHTML(i18n('searchingText')) + "</p>");
                 show_dropdown();
             }
         }
 
         function show_dropdown_hint() {
             if ($(input).data("settings").hintText) {
-                dropdown.html("<p>" + escapeHTML($(input).data("settings").hintText) + "</p>");
+                dropdown.html("<p>" + escapeHTML(i18n('hintText')) + "</p>");
                 show_dropdown();
             }
         }
@@ -936,7 +947,7 @@
                 }
             } else {
                 if ($(input).data("settings").noResultsText) {
-                    dropdown.html("<p>" + escapeHTML($(input).data("settings").noResultsText) + "</p>");
+                    dropdown.html("<p>" + escapeHTML(i18n('noResultsText')) + "</p>");
                     show_dropdown();
                 }
             }
@@ -1087,6 +1098,21 @@
                 },
                 50
             );
+        }
+
+        function i18n(message) {
+            var fallbackMessage = {
+                hintText: "Type in a search term",
+                noResultsText: "No results",
+                searchingText: "Tìm kiếm..."
+            }
+
+            var text = '';
+            if(translate != null) {
+                text = translate.formatMessage($(input).data("settings").textdomain + '/' + message);
+            }
+
+            return text == '' ? fallbackMessage[message] : text;
         }
     };
 

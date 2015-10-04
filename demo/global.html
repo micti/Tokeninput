@@ -1,0 +1,117 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tokeninput - Global example</title>
+
+    <script type="text/javascript" src="../src/ext/cldr.js"></script>
+    <script type="text/javascript" src="../src/ext/cldr/event.js"></script>
+    <script type="text/javascript" src="../src/ext/cldr/supplemental.js"></script>
+
+    <script src="../src/ext/globalize.js"></script>
+    <script src="../src/ext/globalize/message.js"></script>
+
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../src/jqueryui.position.js"></script>
+    <script type="text/javascript" src="../src/jquery.tokeninput.18n.js"></script>
+    <script type="text/javascript" src="../src/jquery.tokeninput.js"></script>
+
+    <link rel="stylesheet" href="../styles/token-input.css" type="text/css" />
+    <link rel="stylesheet" href="../styles/token-input-facebook.css" type="text/css" />
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("input[type=button]").click(function () {
+            alert("Would submit: " + $(this).siblings("input[type=text]").val());
+        });
+    });
+    </script>
+</head>
+
+<body style="margin-bottom: 200px;">
+    <h1>jQuery Tokeninput Demos</h1>
+
+    <h2>Simple Local Data Search :  English</h2>
+    <div>
+        <input type="text" id="demo-input-local" name="blah" />
+        <input type="button" value="Submit" />
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $("#demo-input-local").tokenInput([
+                {id: 7, name: "Ruby"},
+                {id: 11, name: "Python"},
+                {id: 13, name: "JavaScript"},
+                {id: 17, name: "ActionScript"},
+                {id: 19, name: "Scheme"},
+                {id: 23, name: "Lisp"},
+                {id: 29, name: "C#"},
+                {id: 31, name: "Fortran"},
+                {id: 37, name: "Visual Basic"},
+                {id: 41, name: "C"},
+                {id: 43, name: "C++"},
+                {id: 47, name: "Java"}
+            ], {
+                enableI18n: true,
+                locale: 'en'
+            });
+        });
+        </script>
+    </div>
+
+    <h2>Simple Local Data Search :  Vietnamese</h2>
+    <div>
+        <input type="text" id="demo-input-local-2" name="blah" />
+        <input type="button" value="Submit" />
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $("#demo-input-local-2").tokenInput([
+                {id: 7, name: "Ruby"},
+                {id: 11, name: "Python"},
+                {id: 13, name: "JavaScript"},
+                {id: 17, name: "ActionScript"},
+                {id: 19, name: "Scheme"},
+                {id: 23, name: "Lisp"},
+                {id: 29, name: "C#"},
+                {id: 31, name: "Fortran"},
+                {id: 37, name: "Visual Basic"},
+                {id: 41, name: "C"},
+                {id: 43, name: "C++"},
+                {id: 47, name: "Java"}
+            ], {
+                enableI18n: true,
+                locale: 'vi',
+            });
+        });
+        </script>
+    </div>
+
+    <h2>Simple Local Data Search :  Vietnamese</h2>
+    <div>
+        <input type="text" id="demo-input-local-3" name="blah" />
+        <input type="button" value="Submit" />
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $("#demo-input-local-3").tokenInput([
+                {id: 7, name: "Ruby"},
+                {id: 11, name: "Python"},
+                {id: 13, name: "JavaScript"},
+                {id: 17, name: "ActionScript"},
+                {id: 19, name: "Scheme"},
+                {id: 23, name: "Lisp"},
+                {id: 29, name: "C#"},
+                {id: 31, name: "Fortran"},
+                {id: 37, name: "Visual Basic"},
+                {id: 41, name: "C"},
+                {id: 43, name: "C++"},
+                {id: 47, name: "Java"}
+            ], {
+                hintText: false,
+                noResultsText: false,
+                searchingText: false
+            });
+        });
+        </script>
+    </div>
+</body>
+</html>
